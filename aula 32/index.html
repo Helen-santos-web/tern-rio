@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternário</title>
+</head>
+<body>
+    
+     
+    <div class="formulario">
+        <H1>Verificação de Idade</H1>
+        <p>Por favor, insira sua idade:</p>
+        <input type="number" id="idadeInput">
+        <button onclick="verificarIdade()">Verificar</button>
+   </div>
+
+   <script>
+
+    function verificarIdade(){
+        var idade = parseInt(document.getElementById('idadeInput').value);
+        idade >= 18 ? window.location.href = 'maior.html' : window.loocation.href = 'menor.html';
+        
+    }
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case / Escolha Caso</title>
+    <style>
+    body{
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    img{
+        max-width: 200px;
+        max-height: 200px;
+        margin: 10px;
+    }
+    </style>
+    
+</head>
+<body>
+
+    <h1>Selecione um dia da semana</h1>
+    <select name="" id="diaSemana" onchange="mostrarMensagem()">
+        <option value="default">Selecione um dia</option>
+        <option value="segunda">Seguna-Feira</option>
+        <option value="terca">Terça-Feira</option>
+        <option value="quarta">Quarta-Feira</option>
+        <option value="quinta">Quinta-Feira</option>
+        <option value="sexta">Sexta-Feira</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo</option>
+    </select>
+
+    <div id="mensagem"></div>
+    
+    <script>
+        function mostrarMensagem(){
+            var select = document.getElementById('diaSemana');
+            var diaSelecionado = select.value;
+            var mensagemElemento = document.getElementById
+            ('mensagem');
+            var mensagem = "";
+            var imagemSrc = "";
+
+            switch(diaSelecionado){
+                case "segunda": 
+                     mensagem = "Bom Dia! A semana começou e não vejo a hora de acabar.";
+                     imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPHzVJaNcEF4FxGT6CSlJn3EaFxHF71u72uQ&usqp=CAU"
+                     break;
+                case "terca":
+                    mensagem = "Bom Dia! Ainda é inicio de semana.";
+                    imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMbEG9bdHl1qCZMQ8xIMUWmzEq5VdiRPmkw&usqp=CAU"
+                    break;
+                case "quarta": 
+                     mensagem = "Bom Dia! Meio da semana aguente firme.";
+                     imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0eYnB5xPY0LwDSUH1wYDsC_UIJjroHdx9g&usqp=CAU"
+                     break;    
+                case "quinta": 
+                     mensagem = "Bom Dia! Quinta chegou só mais um dia.";
+                     imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxmc1NnDLm1I7R4MDy_xdUOrUG0GpXpHvNlQ&usqp=CAU"
+                     break;   
+                case "sexta": 
+                     mensagem = "Bom Dia! É sexta finalmente.";
+                     imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ9nWmfWQeKyQoSIkC3yIpxeIkaI797zZqcQ&usqp=CAU"
+                     break; 
+                case "sabado": 
+                     mensagem = "Bom Dia! Hoje é sábado dia de aproveitar.";
+                     imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMmroUaRbxPYaTZNpyZzBM6t92j-Tr7IhgbSW--dFb7yqvR9kQbYsBLq99DJx7FfmiLDk&usqp=CAU"
+                     break; 
+                case "domingo": 
+                     mensagem = "Bom Dia! Domingo a noite é hoje :(";
+                     imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlh5DeSw68dZ5u6H7jgh5Z3xmwYgldiT-G_g&usqp=CAU";
+                     break;   
+                default: 
+                    mensagem = "por farvor, selecione um dia da semana.";
+            }
+            mensagemElemento.innerHTML = "<p>" +  mensagem + "</p>";
+            if(imagemSrc!== "") {
+                mensagemElemento.innerHTML += "<img src = '" + imagemSrc + "'>";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
